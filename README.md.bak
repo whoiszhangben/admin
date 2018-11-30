@@ -1,0 +1,2 @@
+这个项目主要用vue+adminLTE+bootstrap去改之前基于asp.net mvc做得HKShoppingPrj项目，主要是单页面SPA应用
+为了实现更轻量级
