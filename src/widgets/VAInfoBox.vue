@@ -1,7 +1,7 @@
 <template>
   <div class="info-box" :class="wrapBgColor">
     <span class="info-box-icon" v-bind:class="bgColor">
-      <i v-bind:class="bgIcon"></i>
+      <i style="display: inline-block;height: 90px;width: 90px;" v-bind:style="{backgroundImage: 'url(' + bgIcon + ')'}"></i>
     </span>
     <div class="info-box-content">
       <span class="info-box-text">{{text}}</span>

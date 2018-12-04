@@ -79,6 +79,61 @@ module.exports = [
   },
   {
     type: 'tree',
+    icon: 'fa fa-users',
+    name: '会员管理',
+    items: [
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '电商账户',
+        router: {
+          name: 'HXProfile'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '运营中心',
+        router: {
+          name: 'DashboardV2'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '综合会员',
+        router: {
+          name: 'HXProfile'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '机构信息',
+        router: {
+          name: 'DashboardV2'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '公众号信息',
+        router: {
+          name: 'HXProfile'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '手工兑换',
+        router: {
+          name: 'DashboardV2'
+        }
+      }
+    ]
+  },
+  {
+    type: 'tree',
     icon: 'fa fa-laptop',
     name: '商城管理',
     items: [

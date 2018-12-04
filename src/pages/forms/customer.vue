@@ -1,12 +1,12 @@
 <template>
   <div>
     <p class="text-right" style="margin-right: 1em;"><a class="btn btn-primary" @click="customerop(0)">新增客户</a> </p>
-    <div v-for="(item, index) in totalCustomer" class='col-md-3' @mouseover="overShow(item)" @mouseout="outHide(item)" :class="{divHover: showHover}">
+    <div v-for="(item, index) in totalCustomer" @click="customerop(1, item.CustomerCode)" class='col-md-3' @mouseover="hover(index)" @mouseout="showHover = -1" :class="{divHover: showHover == index}">
       <va-info-box
         :bgColor='item.CustomerColor'
-        :bgIcon='item.CustomerIcon'
+        :bgIcon='item.UploadImg'
         :text='item.CustomerName'
-        :number='item.CustomerDesc'
+        :number='item.CustomerRemark'
       ></va-info-box>
     </div>
   </div>
@@ -18,14 +18,16 @@
   export default {
     data () {
       return {
-        showHover: false
+        showHover: -1
       }
     },
     components: {
       'va-info-box': VAInfoBox
     },
     created () {
-      this.fetchCustomer()
+      if (this.totalCustomer.length === 0) {
+        this.fetchCustomer()
+      }
     },
     computed: {
       ...mapGetters([
@@ -36,18 +38,15 @@
       ...mapActions([
         'fetchCustomer'
       ]),
-      customerop (type) {
-        if (type === 0) {
-          this.$router.push({path: '/HK/CustomerOP', query: {type: 0}})
+      customerop (type, customerid) {
+        if (customerid) {
+          this.$router.push({path: '/HK/CustomerOP', query: {type: type, id: customerid}})
+        } else {
+          this.$router.push({path: '/HK/CustomerOP', query: {type: type}})
         }
       },
-      overShow (item) {
-        this.showHover = true
-        console.log(item)
-      },
-      outHide (item) {
-        this.showHover = false
-        console.log(item)
+      hover (index) {
+        this.showHover = index
       }
     }
   }
@@ -55,6 +54,11 @@
 <style lang="css">
   .divHover{
     cursor: pointer;
-    opacity: 0.5
+    opacity: 0.8;
+    transform: scale(1.1);
+    -ms-transform:scale(1.1);     /* IE 9 */
+    -moz-transform:scale(1.1);     /* Firefox */
+    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
+    -o-transform:scale(1.1);
   }
 </style>
