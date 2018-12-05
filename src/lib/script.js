@@ -5,7 +5,6 @@ import 'jquery-slimscroll'
 import 'jquery-ui/ui/widgets/sortable.js'
 import 'jquery-ui/ui/widgets/datepicker.js'
 import 'jquery-ui/themes/base/datepicker.css'
-import 'vee-validate/dist/vee-validate.js'
 
 import 'admin-lte'
 import 'chart.js'
