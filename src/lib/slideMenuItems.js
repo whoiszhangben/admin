@@ -95,7 +95,7 @@ module.exports = [
         icon: 'fa fa-circle-o',
         name: '运营中心',
         router: {
-          name: 'DashboardV2'
+          name: 'MallOPCenter'
         }
       },
       {

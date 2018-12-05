@@ -49,3 +49,41 @@ export const fetchCustomer = ({ commit }) => {
   //     console.log(error)
   //   })
 }
+
+export const fetchOPCenter = ({ commit }) => {
+  commit(types.FETCH_OPCENTER, [
+    {
+      UserNo: '555',
+      UserName: '555运营',
+      CardType: 0,
+      CardNo: '429001198410055637',
+      UserAccount: '101559',
+      UserPassword: '123456',
+      Contact: '张三',
+      ContactTel: '15013843457',
+      CreateTime: '2018/12/15 10:40:10'
+    },
+    {
+      UserNo: '555',
+      UserName: '555运营',
+      CardType: 0,
+      CardNo: '429001198410055637',
+      UserAccount: '101559',
+      UserPassword: '123456',
+      Contact: '张三',
+      ContactTel: '15013843457',
+      CreateTime: '2018/12/15 10:40:10'
+    },
+    {
+      UserNo: '555',
+      UserName: '555运营',
+      CardType: 0,
+      CardNo: '429001198410055637',
+      UserAccount: '101559',
+      UserPassword: '123456',
+      Contact: '张三',
+      ContactTel: '15013843457',
+      CreateTime: '2018/12/15 10:40:10'
+    }
+  ])
+}

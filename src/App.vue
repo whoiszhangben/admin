@@ -4,7 +4,7 @@
       <va-navibar></va-navibar>
       <va-slider :slideMenuItems="slideMenuItems"></va-slider>
       <va-content-wrap></va-content-wrap>
-      <Modal></Modal>
+      <form-modal></form-modal>
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@
 import VANaviBar from 'NaviBar.vue'
 import VASlider from 'Slider.vue'
 import VAContentWrap from 'ContentWrap.vue'
-import Modal from './components/Modal.vue'
+import FormModal from './components/FormModal.vue'
 import store from './vuex/store.js'
 import slideMenuItems from './lib/slideMenuItems.js'
 
@@ -30,7 +30,7 @@ export default {
     'va-navibar': VANaviBar,
     'va-slider': VASlider,
     'va-content-wrap': VAContentWrap,
-    Modal
+    FormModal
   },
   store
 }

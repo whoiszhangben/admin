@@ -10,6 +10,8 @@ import router from './router'
 import EventBus from './lib/eventBus.js'
 import axios from 'axios'
 import './assets/css/main.css'
+import { Validator } from 'vee-validate'
+const validator = new Validator()
 
 Vue.prototype.$bus = EventBus
 Vue.prototype.$http = axios
@@ -18,6 +20,7 @@ Vue.prototype.$http = axios
 new Vue({
   el: '#app',
   router,
+  validator,
   template: '<App/>',
   components: {
     App

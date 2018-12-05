@@ -24,6 +24,7 @@ import HKVendor from 'pages/forms/vendor.vue'
 import HKCustomer from 'pages/forms/customer.vue'
 import HKCustomerOP from 'pages/forms/customerop.vue'
 import HKGoods from 'pages/forms/goods.vue'
+import MallOPCenter from 'pages/forms/mall/opcenter.vue'
 
 Vue.use(Router)
 
@@ -69,6 +70,11 @@ export default new Router({
       path: '/HK/Goods',
       name: 'HKGoods',
       component: HKGoods
+    },
+    {
+      path: '/Mall/OPCenter',
+      name: 'MallOPCenter',
+      component: MallOPCenter
     },
     {
       path: '/examples/chart',
