@@ -87,3 +87,74 @@ export const fetchOPCenter = ({ commit }) => {
     }
   ])
 }
+
+export const fetchRoles = ({ commit }) => {
+  commit(types.FETCH_ROLE, [
+    {
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      RoleID: 2,
+      RoleName: '会员超级管理员'
+    },
+    {
+      RoleID: 3,
+      RoleName: '机构管理员'
+    },
+    {
+      RoleID: 4,
+      RoleName: '运营中心管理员'
+    }
+  ])
+}
+
+export const fetchMenuRoles = ({ commit }) => {
+  commit(types.FETCH_MENUROLE, [
+    {
+      MenuID: 1,
+      MenuName: '管理员管理',
+      MenuURL: '',
+      MenuLevel: 1,
+      ParentID: 0,
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      MenuID: 8,
+      MenuName: '设置角色权限',
+      MenuURL: '/Manage/RoleRights',
+      MenuLevel: 2,
+      ParentID: 1,
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      MenuID: 9,
+      MenuName: '设置管理员角色',
+      MenuURL: '/Manage/ManagerRole',
+      MenuLevel: 2,
+      ParentID: 1,
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      MenuID: 10,
+      MenuName: '管理员信息',
+      MenuURL: '/Manage/ManagerInfo',
+      MenuLevel: 2,
+      ParentID: 1,
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      MenuID: 2,
+      MenuName: '香港代购',
+      MenuURL: '',
+      MenuLevel: 1,
+      RoleID: 0,
+      ParentID: 0,
+      RoleName: ''
+    }
+  ])
+}

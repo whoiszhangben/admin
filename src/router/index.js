@@ -25,6 +25,8 @@ import HKCustomer from 'pages/forms/customer.vue'
 import HKCustomerOP from 'pages/forms/customerop.vue'
 import HKGoods from 'pages/forms/goods.vue'
 import MallOPCenter from 'pages/forms/mall/opcenter.vue'
+import RoleRights from 'pages/forms/manage/rolerights.vue'
+import AuthRights from 'pages/forms/manage/authrights.vue'
 
 Vue.use(Router)
 
@@ -50,6 +52,16 @@ export default new Router({
       path: '/dashboard/v2',
       name: 'DashboardV2',
       component: DashboardV2
+    },
+    {
+      path: '/Manage/RoleRights',
+      name: 'RoleRights',
+      component: RoleRights
+    },
+    {
+      path: '/Manage/AuthRights',
+      name: 'AuthRights',
+      component: AuthRights
     },
     {
       path: '/HK/Vendor',

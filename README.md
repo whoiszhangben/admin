@@ -11,4 +11,39 @@
 6 增加了TaAccount资金账户表 TaAccountID(资金账户ID，自增长),UserID(用户表主键),Balance(资金余额),HasCheck,DesCheck,MemberID,OrgID,BrokerID,Status
 7 增加了 LoginAccountRole登录账户角色映射表 ID(自增长ID),RoleId(角色编号),LoginID(登录ID)
 
+系统的菜单设计
+客户管理	/HK/Customer
+商品管理	/HK/Goods
+供应商管理	/HK/Vendor
+采购管理	/HK/Purchase
+销售管理	/HK/Sale
+
+档案管理	/HX/Profile
+扩展功能	/HX/Ext
+
+管理员管理
+设置角色权限	/Manage/RoleRights
+设置管理员角色	/Manage/ManagerRole
+管理员信息	/Manage/ManagerInfo
+
+会员信息
+电商账户	/Member/ECAccount
+运营中心	/Member/OPCenter
+综合会员	/Member/GeneralMember
+机构信息	/Member/AreaInfo
+公众号信息	/Member/Wechat
+手工兑换	/Member/Exchange
+
+商城管理
+客户资料	/Mall/Customer
+商品管理	/Mall/Goods
+评价管理	/Mall/Comment
+提货管理	/Mall/Delivery
+代售管理	/Mall/Commission
+快递管理	/Mall/Express
+
+
+
+
+
 

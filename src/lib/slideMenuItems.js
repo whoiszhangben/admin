@@ -1,11 +1,42 @@
 module.exports = [
   {
     type: 'tree',
-    icon: 'fa fa-dashboard',
+    icon: 'fa fa-home',
     name: '主页',
     router: {
       name: 'Index'
     }
+  },
+  {
+    type: 'tree',
+    icon: 'fa fa-shield',
+    name: '管理员管理',
+    items: [
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '设置角色权限',
+        router: {
+          name: 'RoleRights'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '设置管理员角色',
+        router: {
+          name: 'HKGoods'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: '管理员信息',
+        router: {
+          name: 'HKVendor'
+        }
+      }
+    ]
   },
   {
     type: 'tree',
@@ -79,7 +110,7 @@ module.exports = [
   },
   {
     type: 'tree',
-    icon: 'fa fa-users',
+    icon: 'fa fa-user',
     name: '会员管理',
     items: [
       {
