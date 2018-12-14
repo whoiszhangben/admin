@@ -18,6 +18,7 @@ import Timeline from 'pages/ui-elements/Timeline.vue'
 import Modals from 'pages/ui-elements/Modals.vue'
 
 // forms
+import Login from 'pages/login/login.vue'
 import AdvancedElements from 'pages/forms/AdvancedElements.vue'
 import HXProfile from 'pages/forms/profile.vue'
 import HKVendor from 'pages/forms/vendor.vue'
@@ -27,132 +28,167 @@ import HKGoods from 'pages/forms/goods.vue'
 import MallOPCenter from 'pages/forms/mall/opcenter.vue'
 import RoleRights from 'pages/forms/manage/rolerights.vue'
 import AuthRights from 'pages/forms/manage/authrights.vue'
+import DetailRights from 'pages/forms/manage/detailrights.vue'
+import ManagerInfo from 'pages/forms/manage/managerinfo.vue'
+import ManagerRole from 'pages/forms/manage/managerrole.vue'
 
 Vue.use(Router)
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: ChartExample
-    },
-    {
-      path: '/sample',
-      name: 'Sample',
-      component: Sample
-    },
-    {
-      path: '/dashboard/v1',
-      name: 'DashboardV1',
-      component: DashboardV1
-    },
-    {
-      path: '/dashboard/v2',
-      name: 'DashboardV2',
-      component: DashboardV2
-    },
-    {
-      path: '/Manage/RoleRights',
-      name: 'RoleRights',
-      component: RoleRights
-    },
-    {
-      path: '/Manage/AuthRights',
-      name: 'AuthRights',
-      component: AuthRights
-    },
-    {
-      path: '/HK/Vendor',
-      name: 'HKVendor',
-      component: HKVendor
-    },
-    {
-      path: '/HK/Customer',
-      name: 'HKCustomer',
-      component: HKCustomer
-    },
-    {
-      path: '/HK/CustomerOP',
-      name: 'HKCustomerOP',
-      component: HKCustomerOP
-    },
-    {
-      path: '/HK/Goods',
-      name: 'HKGoods',
-      component: HKGoods
-    },
-    {
-      path: '/Mall/OPCenter',
-      name: 'MallOPCenter',
-      component: MallOPCenter
-    },
-    {
-      path: '/examples/chart',
-      name: 'ChartExample',
-      component: ChartExample
-    },
-    {
-      path: '/examples/alert',
-      name: 'AlertExample',
-      component: AlertExample
-    },
-    {
-      path: '/examples/modal',
-      name: 'ModalExample',
-      component: ModalExample
-    },
-    {
-      path: '/examples/widgets',
-      name: 'WidgetsExample',
-      component: WidgetsExample
-    },
-    {
-      path: '/examples/api-example',
-      name: 'APIExample',
-      component: APIExample
-    },
-    {
-      path: '/ui-elements/general',
-      name: 'General',
-      component: General
-    },
-    {
-      path: '/ui-elements/icons',
-      name: 'Icons',
-      component: Icons
-    },
-    {
-      path: '/ui-elements/buttons',
-      name: 'Buttons',
-      component: Buttons
-    },
-    {
-      path: '/ui-elements/sliders',
-      name: 'Sliders',
-      component: Sliders
-    },
-    {
-      path: '/ui-elements/timeline',
-      name: 'Timeline',
-      component: Timeline
-    },
-    {
-      path: '/ui-elements/modals',
-      name: 'Modals',
-      component: Modals
-    },
-    {
-      path: '/HX/Profile',
-      name: 'HXProfile',
-      component: HXProfile
-    },
-    {
-      path: '/forms/advanced-elements',
-      name: 'AdvancedElements',
-      component: AdvancedElements
-    }
-  ],
+const routes = [
+  {
+    path: '/',
+    name: 'Index',
+    component: ChartExample
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/sample',
+    name: 'Sample',
+    component: Sample
+  },
+  {
+    path: '/dashboard/v1',
+    name: 'DashboardV1',
+    component: DashboardV1
+  },
+  {
+    path: '/dashboard/v2',
+    name: 'DashboardV2',
+    component: DashboardV2
+  },
+  {
+    path: '/Manage/RoleRights',
+    name: 'RoleRights',
+    component: RoleRights
+  },
+  {
+    path: '/Manage/AuthRights',
+    name: 'AuthRights',
+    component: AuthRights
+  },
+  {
+    path: '/Manage/DetailRights',
+    name: 'DetailRights',
+    component: DetailRights
+  },
+  {
+    path: '/Manage/ManagerInfo',
+    name: 'ManagerInfo',
+    component: ManagerInfo
+  },
+  {
+    path: '/Manage/ManagerRole',
+    name: 'ManagerRole',
+    component: ManagerRole
+  },
+  {
+    path: '/HK/Vendor',
+    name: 'HKVendor',
+    component: HKVendor
+  },
+  {
+    path: '/HK/Customer',
+    name: 'HKCustomer',
+    component: HKCustomer
+  },
+  {
+    path: '/HK/CustomerOP',
+    name: 'HKCustomerOP',
+    component: HKCustomerOP
+  },
+  {
+    path: '/HK/Goods',
+    name: 'HKGoods',
+    component: HKGoods
+  },
+  {
+    path: '/Mall/OPCenter',
+    name: 'MallOPCenter',
+    component: MallOPCenter
+  },
+  {
+    path: '/examples/chart',
+    name: 'ChartExample',
+    component: ChartExample
+  },
+  {
+    path: '/examples/alert',
+    name: 'AlertExample',
+    component: AlertExample
+  },
+  {
+    path: '/examples/modal',
+    name: 'ModalExample',
+    component: ModalExample
+  },
+  {
+    path: '/examples/widgets',
+    name: 'WidgetsExample',
+    component: WidgetsExample
+  },
+  {
+    path: '/examples/api-example',
+    name: 'APIExample',
+    component: APIExample
+  },
+  {
+    path: '/ui-elements/general',
+    name: 'General',
+    component: General
+  },
+  {
+    path: '/ui-elements/icons',
+    name: 'Icons',
+    component: Icons
+  },
+  {
+    path: '/ui-elements/buttons',
+    name: 'Buttons',
+    component: Buttons
+  },
+  {
+    path: '/ui-elements/sliders',
+    name: 'Sliders',
+    component: Sliders
+  },
+  {
+    path: '/ui-elements/timeline',
+    name: 'Timeline',
+    component: Timeline
+  },
+  {
+    path: '/ui-elements/modals',
+    name: 'Modals',
+    component: Modals
+  },
+  {
+    path: '/HX/Profile',
+    name: 'HXProfile',
+    component: HXProfile
+  },
+  {
+    path: '/forms/advanced-elements',
+    name: 'AdvancedElements',
+    component: AdvancedElements
+  }
+]
+
+const router = new Router({
+  scrollBehavior: () => ({ y: 0 }),
+  routes,
   linkActiveClass: 'active'
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.path !== '/login') {
+    console.log(to)
+    console.log(from)
+    console.log(next)
+    next()
+  }
+})
+export default router

@@ -8,3 +8,5 @@ export const totalCustomer = state => state.customers.main
 export const totalOPCenter = state => state.opcenters.main
 export const totalRoles = state => state.roles.main
 export const totalMenuRoles = state => state.menuroles.main
+export const totalAdmins = state => state.administrators.main
+export const totalAdminRoles = state => state.adminroles.main

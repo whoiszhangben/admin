@@ -4,6 +4,8 @@ import customers from './customers'
 import opcenters from './opcenters'
 import roles from './roles'
 import menuroles from './menuroles'
+import administrators from './administrators'
+import adminroles from './adminroles'
 
 export default {
   products,
@@ -11,5 +13,7 @@ export default {
   customers,
   opcenters,
   roles,
-  menuroles
+  menuroles,
+  administrators,
+  adminroles
 }

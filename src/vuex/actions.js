@@ -155,6 +155,336 @@ export const fetchMenuRoles = ({ commit }) => {
       RoleID: 0,
       ParentID: 0,
       RoleName: ''
+    },
+    {
+      MenuID: 11,
+      MenuName: '客户管理',
+      MenuURL: '/HK/Customer',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 2,
+      RoleName: ''
+    },
+    {
+      MenuID: 12,
+      MenuName: '商品管理',
+      MenuURL: '/HK/Goods',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 2,
+      RoleName: ''
+    },
+    {
+      MenuID: 13,
+      MenuName: '供应商管理',
+      MenuURL: '/HK/Vendor',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 2,
+      RoleName: ''
+    },
+    {
+      MenuID: 14,
+      MenuName: '采购管理',
+      MenuURL: '/HK/Purchase',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 2,
+      RoleName: ''
+    },
+    {
+      MenuID: 15,
+      MenuName: '销售管理',
+      MenuURL: '/HK/Sale',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 2,
+      RoleName: ''
+    },
+    {
+      MenuID: 3,
+      MenuName: '华信工作',
+      MenuURL: '',
+      MenuLevel: 1,
+      RoleID: 0,
+      ParentID: 0,
+      RoleName: ''
+    },
+    {
+      MenuID: 16,
+      MenuName: '档案管理',
+      MenuURL: '/HX/Profile',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 3,
+      RoleName: ''
+    },
+    {
+      MenuID: 17,
+      MenuName: '扩展功能',
+      MenuURL: '/HX/Ext',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 3,
+      RoleName: ''
+    },
+    {
+      MenuID: 4,
+      MenuName: '会员管理',
+      MenuURL: '',
+      MenuLevel: 1,
+      RoleID: 0,
+      ParentID: 0,
+      RoleName: ''
+    },
+    {
+      MenuID: 18,
+      MenuName: '电商账户',
+      MenuURL: '/Member/ECAccount',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 4,
+      RoleName: ''
+    },
+    {
+      MenuID: 19,
+      MenuName: '运营中心',
+      MenuURL: '/Member/OPCenter',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 4,
+      RoleName: ''
+    },
+    {
+      MenuID: 20,
+      MenuName: '综合会员',
+      MenuURL: '/Member/GeneralMember',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 4,
+      RoleName: ''
+    },
+    {
+      MenuID: 21,
+      MenuName: '机构信息',
+      MenuURL: '/Member/AreaInfo',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 4,
+      RoleName: ''
+    },
+    {
+      MenuID: 22,
+      MenuName: '公众号信息',
+      MenuURL: '/Member/Wechat',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 4,
+      RoleName: ''
+    },
+    {
+      MenuID: 23,
+      MenuName: '手工兑换',
+      MenuURL: '/Member/Exchange',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 4,
+      RoleName: ''
+    },
+    {
+      MenuID: 5,
+      MenuName: '商城管理',
+      MenuURL: '',
+      MenuLevel: 1,
+      RoleID: 0,
+      ParentID: 0,
+      RoleName: ''
+    },
+    {
+      MenuID: 24,
+      MenuName: '客户资料',
+      MenuURL: '/Mall/Customer',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 5,
+      RoleName: ''
+    },
+    {
+      MenuID: 25,
+      MenuName: '商品管理',
+      MenuURL: '/Mall/Goods',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 5,
+      RoleName: ''
+    },
+    {
+      MenuID: 26,
+      MenuName: '评价管理',
+      MenuURL: '/Mall/Comment',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 5,
+      RoleName: ''
+    },
+    {
+      MenuID: 27,
+      MenuName: '提货管理',
+      MenuURL: '/Mall/Delivery',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 5,
+      RoleName: ''
+    },
+    {
+      MenuID: 28,
+      MenuName: '代售管理',
+      MenuURL: '/Mall/Commission',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 5,
+      RoleName: ''
+    },
+    {
+      MenuID: 29,
+      MenuName: '快递管理',
+      MenuURL: '/Mall/Express',
+      MenuLevel: 2,
+      RoleID: 0,
+      ParentID: 5,
+      RoleName: ''
+    },
+    {
+      MenuID: 6,
+      MenuName: '报表查询',
+      MenuURL: '',
+      MenuLevel: 1,
+      RoleID: 0,
+      ParentID: 0,
+      RoleName: ''
+    },
+    {
+      MenuID: 7,
+      MenuName: '个人点滴',
+      MenuURL: '',
+      MenuLevel: 1,
+      RoleID: 0,
+      ParentID: 0,
+      RoleName: ''
     }
   ])
+}
+
+export const fetchAdmins = ({ commit }) => {
+  commit(types.FETCH_ADMIN, [
+    {
+      LoginID: 1,
+      UserID: 1,
+      LoginAccount: 'zk_admin',
+      AccountType: 10,
+      AccountStatus: 1,
+      Mobile: '15013843457',
+      CreateTime: '2018-12-12 11:11:08',
+      UpdateTime: ''
+    },
+    {
+      LoginID: 2,
+      UserID: 2,
+      LoginAccount: '999_admin',
+      AccountType: 12,
+      AccountStatus: 1,
+      Mobile: '15013843457',
+      CreateTime: '2018-12-12 11:11:08',
+      UpdateTime: ''
+    },
+    {
+      LoginID: 3,
+      UserID: 3,
+      LoginAccount: '901_admin',
+      AccountType: 14,
+      AccountStatus: 1,
+      Mobile: '15013843457',
+      CreateTime: '2018-12-12 11:11:08',
+      UpdateTime: ''
+    },
+    {
+      LoginID: 4,
+      UserID: 4,
+      LoginAccount: '888_admin',
+      AccountType: 15,
+      AccountStatus: 2,
+      Mobile: '15013843457',
+      CreateTime: '2018-12-12 11:11:08',
+      UpdateTime: ''
+    }
+  ])
+}
+
+export const fetchAdminRoles = ({ commit }) => {
+  commit(types.FETCH_ADMINROLE, [
+    {
+      LoginID: 1,
+      LoginAccount: 'zk_admin',
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      LoginID: 1,
+      LoginAccount: 'zk_admin',
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      LoginID: 1,
+      LoginAccount: 'zk_admin',
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    },
+    {
+      LoginID: 1,
+      LoginAccount: 'zk_admin',
+      RoleID: 1,
+      RoleName: '电商总管理员'
+    }
+  ])
+}
+
+export const fetchCurrentUser = ({ commit }) => {
+  commit(types.FETCH_CURRENTUSER, {
+    LoginID: 1,
+    LoginAccount: 'zk_admin',
+    RoleID: 1,
+    RoleName: '电商总管理员',
+    IsLogin: true,
+    MenuRights: [
+      {
+        MenuID: 1,
+        MenuName: '管理员管理',
+        MenuURL: '',
+        MenuLevel: 1,
+        ParentID: 0
+      },
+      {
+        MenuID: 8,
+        MenuName: '设置角色权限',
+        MenuURL: '/Manage/RoleRights',
+        MenuLevel: 2,
+        ParentID: 1
+      },
+      {
+        MenuID: 9,
+        MenuName: '设置管理员角色',
+        MenuURL: '/Manage/ManagerRole',
+        MenuLevel: 2,
+        ParentID: 1
+      },
+      {
+        MenuID: 10,
+        MenuName: '管理员信息',
+        MenuURL: '/Manage/ManagerInfo',
+        MenuLevel: 2,
+        ParentID: 1
+      }
+    ]
+  })
 }

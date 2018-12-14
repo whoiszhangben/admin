@@ -1,3 +1,5 @@
+import * as types from '../mutation-types'
+
 const state = {
   main: {
     name: 'admin',
@@ -11,7 +13,9 @@ const state = {
 }
 
 const mutations = {
-
+  [types.FETCH_CURRENTUSER] (state, user) {
+    state.main = user
+  }
 }
 
 export default {

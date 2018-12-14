@@ -1,32 +1,7 @@
 <template>
   <div>
-    <div class="clearfix" style="margin-bottom: 1em;">
-      <p>角色名称：<input type="text"/><button style="margin: 1em;">新增角色</button></p>
-    </div>
-    <div class="box">
-      <div class="box-body">
-        <div class="table-responsive">
-          <table class="table no-margin">
-            <thead>
-            <tr>
-              <th>角色编号</th>
-              <th>角色名称</th>
-              <th>角色授权</th>
-              <th>权限详情</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="(item,index) in totalRoles" :key="index">
-              <td>{{item.RoleID}}</td>
-              <td>{{item.RoleName}}</td>
-              <td><a href="javascript:void 0;" @click="authRights(item.RoleID )">授权</a></td>
-              <td><a href="javascript:void 0;" @click="detailRights(item.RoleID )">详情</a></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <p>当前角色名称：{{roleName}}  <span style="margin: 2em;"><a href="javascript:void 0;" @click="goBack()">返回</a></span></p>
+    <div id="tree"></div>
   </div>
 </template>
 <script>
@@ -36,20 +11,64 @@
   export default {
     data () {
       return {
+        roleName: '',
+        nodeCheckedSilent: false,
+        nodeUncheckedSilent: false
       }
     },
     created () {
+      if (this.totalMenuRoles.length === 0) {
+        this.fetchMenuRoles()
+      }
       if (this.totalRoles.length === 0) {
         this.fetchRoles()
       }
     },
+    mounted () {
+      debugger
+      let currentRoleId = this.$route.query.id
+      if (currentRoleId) {
+        let currentRole = this.totalRoles.find(item => {
+          return item.RoleID === currentRoleId
+        })
+        this.roleName = currentRole.RoleName
+        // adjustFormat组装成树状结构
+        let arr = []
+        let topMenu = this.totalMenuRoles.filter(item => {
+          return item.MenuLevel === 1 && item.ParentID === 0 && item.RoleID
+        })
+        topMenu.forEach(item => {
+          let subMenu = this.totalMenuRoles.filter(subitem => {
+            return subitem.MenuLevel === 2 && subitem.ParentID === item.MenuID && item.RoleID
+          })
+          let current = {
+            text: item.MenuName,
+            nodes: []
+          }
+          subMenu.forEach(item => {
+            current.nodes.push({
+              text: item.MenuName
+            })
+          })
+          arr.push(current)
+        })
+        $('#tree').treeview({
+          data: arr,
+          highlightSelected: false,  // 选中项不高亮，避免和上述制定的颜色变化规则冲突
+          multiSelect: false, // 不允许多选，因为我们要通过check框来控制
+          showIcon: false
+        })
+      }
+    },
     computed: {
       ...mapGetters([
+        'totalMenuRoles',
         'totalRoles'
       ])
     },
     methods: {
       ...mapActions([
+        'fetchMenuRoles',
         'fetchRoles'
       ]),
       openModal () {
@@ -108,15 +127,11 @@
           }
         })
       },
-      authRights (roleid) {
-        this.$router.push({path: '/Manage/AuthRights', query: {id: roleid}})
-      },
-      detailRights (roleid) {
-        this.$router.push({path: '/Manage/DetailRights', query: {id: roleid}})
+      goBack () {
+        this.$router.push({path: '/Manage/RoleRights'})
       }
     }
   }
 </script>
 <style lang="css">
-
 </style>

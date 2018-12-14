@@ -25,7 +25,7 @@ module.exports = [
         icon: 'fa fa-circle-o',
         name: '设置管理员角色',
         router: {
-          name: 'HKGoods'
+          name: 'ManagerRole'
         }
       },
       {
@@ -33,7 +33,7 @@ module.exports = [
         icon: 'fa fa-circle-o',
         name: '管理员信息',
         router: {
-          name: 'HKVendor'
+          name: 'ManagerInfo'
         }
       }
     ]

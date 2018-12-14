@@ -28,8 +28,8 @@ export default {
       this.type = args.type
       this.title = args.title
       this.description = args.description
-      this.confirmText = args.confirmText || '저장 후 닫기'
-      this.cancelText = args.cancelText || '닫기'
+      this.confirmText = args.confirmText || '确认'
+      this.cancelText = args.cancelText || '取消'
       this.confirmBeforeHook = args.confirmBefore
       this.confirmAfterHook = args.confirmAfter
       this.cancelBeforeHook = args.cancelBefore

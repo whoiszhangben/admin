@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div id="tree" style="height: 400px;overflow-y :scroll;"></div>
+    <p>当前角色名称：{{roleName}}  <span style="margin: 2em;"><a href="javascript:void 0;" @click="goBack()">返回</a></span></p>
+    <div id="tree"></div>
   </div>
 </template>
 <script>
@@ -10,126 +11,90 @@
   export default {
     data () {
       return {
-        silentByChild: false
+        roleName: '',
+        nodeCheckedSilent: false,
+        nodeUncheckedSilent: false
       }
     },
     created () {
       if (this.totalMenuRoles.length === 0) {
         this.fetchMenuRoles()
       }
+      if (this.totalRoles.length === 0) {
+        this.fetchRoles()
+      }
     },
     mounted () {
-      // adjustFormat组装成树状结构
-      let arr = []
-      console.log(this.totalMenuRoles)
-      let topMenu = this.totalMenuRoles.filter(item => {
-        return item.MenuLevel === 1 && item.ParentID === 0
-      })
-      topMenu.forEach(item => {
-        let subMenu = this.totalMenuRoles.filter(subitem => {
-          return subitem.MenuLevel === 2 && subitem.ParentID === item.MenuID
+      let currentRoleId = this.$route.query.id
+      if (currentRoleId) {
+        let currentRole = this.totalRoles.find(item => {
+          return item.RoleID === currentRoleId
         })
-        let current = {
-          text: item.MenuName,
-          nodes: [],
-          state: {
-            checked: item.RoleID
-          }
-        }
-        subMenu.forEach(item => {
-          current.nodes.push({
+        this.roleName = currentRole.RoleName
+        let self = this
+        // adjustFormat组装成树状结构
+        let arr = []
+        let topMenu = this.totalMenuRoles.filter(item => {
+          return item.MenuLevel === 1 && item.ParentID === 0
+        })
+        topMenu.forEach(item => {
+          let subMenu = this.totalMenuRoles.filter(subitem => {
+            return subitem.MenuLevel === 2 && subitem.ParentID === item.MenuID
+          })
+          let current = {
             text: item.MenuName,
             nodes: [],
             state: {
               checked: item.RoleID
             }
-          })
-        })
-        arr.push(current)
-      })
-      $('#tree').treeview({
-        data: arr,
-        highlightSelected: false,  // 选中项不高亮，避免和上述制定的颜色变化规则冲突
-        multiSelect: false, // 不允许多选，因为我们要通过check框来控制
-        showCheckbox: true,
-        showIcon: false,
-        onNodeChecked: function (event, node) {
-          if (node.nodes != null) {
-            $.each(node.nodes, function (index, value) {
-              $('#tree').treeview('checkNode', value.nodeId, {
-                silent: true
-              })
+          }
+          subMenu.forEach(item => {
+            current.nodes.push({
+              text: item.MenuName,
+              state: {
+                checked: item.RoleID
+              }
             })
-          } else {
-            let parentNode = $('#tree').treeview('getParent', node.nodeId)
-            let isAllchecked = true // 是否全部选中
-            let siblings = $('#tree').treeview('getSiblings', node.nodeId)
-            for (let i in siblings) {
-              if (!siblings[i].state.checked) {
-                isAllchecked = false
-                break
-              }
+          })
+          arr.push(current)
+        })
+        $('#tree').treeview({
+          data: arr,
+          highlightSelected: false,  // 选中项不高亮，避免和上述制定的颜色变化规则冲突
+          multiSelect: false, // 不允许多选，因为我们要通过check框来控制
+          showCheckbox: true,
+          showIcon: false,
+          onNodeChecked: function (event, node) {
+            if (self.nodeCheckedSilent) {
+              return
             }
-            if (isAllchecked) {
-              $('#tree').treeview('checkNode', parentNode.nodeId, {
-                silent: true
-              })
-            } else {
-              $('#tree').treeview('selectNode', parentNode.nodeId, {
-                silent: true
-              })
+            self.nodeCheckedSilent = true
+            self.checkAllParent(node)
+            self.checkAllSon(node)
+            self.nodeCheckedSilent = false
+          },
+          onNodeUnchecked: function (event, node) {
+            if (self.nodeUncheckedSilent) {
+              return
             }
+            self.nodeUncheckedSilent = true
+            self.uncheckAllParent(node)
+            self.uncheckAllSon(node)
+            self.nodeUncheckedSilent = false
           }
-        },
-        onNodeUnchecked: function (event, node) {
-          if (node.nodes != null) {
-            if (this.silentByChild) {
-              $.each(node.nodes, function (index, value) {
-                $('#tree').treeview('uncheckNode', value.nodeId, {
-                  silent: true
-                })
-              })
-            }
-          } else {
-            let parentNode = $('#tree').treeview('getParent', node.nodeId)
-            let isAllUnchecked = true // 是否全部取消选中
-            let siblings = $('#tree').treeview('getSiblings', node.nodeId)
-            for (let i in siblings) {
-              if (siblings[i].state.checked) {
-                isAllUnchecked = false
-                break
-              }
-            }
-
-            if (isAllUnchecked) {
-              $('#tree').treeview('unselectNode', parentNode.nodeId, {
-                silent: true
-              })
-              $('#tree').treeview('uncheckNode', parentNode.nodeId, {
-                silent: true
-              })
-            } else {
-              this.silentByChild = false
-              $('#tree').treeview('selectNode', parentNode.nodeId, {
-                silent: true
-              })
-              $('#tree').treeview('uncheckNode', parentNode.nodeId, {
-                silent: true
-              })
-            }
-          }
-          this.silentByChild = true
-        }
-      })
+        })
+      }
     },
     computed: {
       ...mapGetters([
-        'totalMenuRoles'
+        'totalMenuRoles',
+        'totalRoles'
       ])
     },
     methods: {
       ...mapActions([
-        'fetchMenuRoles'
+        'fetchMenuRoles',
+        'fetchRoles'
       ]),
       openModal () {
         console.log(this.$bus)
@@ -192,6 +157,61 @@
       },
       detailRights () {
         console.log('detail rights')
+      },
+      checkAllParent (node) {
+        debugger
+        $('#tree').treeview('checkNode', node.nodeId, {
+          silent: true
+        })
+        var parentNode = $('#tree').treeview('getParent', node.nodeId)
+        if (!('nodeId' in parentNode)) {
+          return
+        } else {
+          this.checkAllParent(parentNode)
+        }
+      },
+      checkAllSon (node) {
+        $('#tree').treeview('checkNode', node.nodeId, {
+          silent: true
+        })
+        if (node.nodes != null && node.nodes.length > 0) {
+          for (let i in node.nodes) {
+            this.checkAllSon(node.nodes[i])
+          }
+        }
+      },
+      uncheckAllParent (node) {
+        $('#tree').treeview('uncheckNode', node.nodeId, {
+          silent: true
+        })
+        let siblings = $('#tree').treeview('getSiblings', node.nodeId)
+        let parentNode = $('#tree').treeview('getParent', node.nodeId)
+        if (!('nodeId' in parentNode)) {
+          return
+        }
+        let isAllUnchecked = true
+        for (let i in siblings) {
+          if (siblings[i].state.checked) {
+            isAllUnchecked = false
+            break
+          }
+        }
+        if (isAllUnchecked) {
+          this.uncheckAllParent(parentNode)
+        }
+      },
+      uncheckAllSon (node) {
+        $('#tree').treeview('uncheckNode', node.nodeId, {
+          silent: true
+        })
+        if (node.nodes != null && node.nodes.length > 0) {
+          for (let i in node.nodes) {
+            this.uncheckAllSon(node.nodes[i])
+          }
+        }
+      },
+      goBack () {
+        this.$router.push({path: '/Manage/RoleRights'})
       }
     }
   }
@@ -205,4 +225,3 @@
     color: red;
   }
 </style>
-
