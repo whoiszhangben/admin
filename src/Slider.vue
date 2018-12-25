@@ -46,6 +46,8 @@ export default {
   },
   components: {
     'va-slide-item': VASlideItem
+  },
+  watch: {
   }
 }
 </script>

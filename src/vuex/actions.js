@@ -118,7 +118,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       ParentID: 0,
       RoleID: 1,
-      RoleName: '电商总管理员'
+      RoleName: '电商总管理员',
+      MenuIcon: 'fa fa-shield'
     },
     {
       MenuID: 8,
@@ -127,7 +128,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       ParentID: 1,
       RoleID: 1,
-      RoleName: '电商总管理员'
+      RoleName: '电商总管理员',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 9,
@@ -136,7 +138,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       ParentID: 1,
       RoleID: 1,
-      RoleName: '电商总管理员'
+      RoleName: '电商总管理员',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 10,
@@ -145,7 +148,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       ParentID: 1,
       RoleID: 1,
-      RoleName: '电商总管理员'
+      RoleName: '电商总管理员',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 2,
@@ -154,7 +158,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       RoleID: 0,
       ParentID: 0,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-shopping'
     },
     {
       MenuID: 11,
@@ -163,7 +168,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 2,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 12,
@@ -172,7 +178,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 2,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 13,
@@ -181,7 +188,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 2,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 14,
@@ -190,7 +198,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 2,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 15,
@@ -199,7 +208,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 2,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 3,
@@ -208,7 +218,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       RoleID: 0,
       ParentID: 0,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-support'
     },
     {
       MenuID: 16,
@@ -217,7 +228,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 3,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 17,
@@ -226,7 +238,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 3,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 4,
@@ -235,7 +248,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       RoleID: 0,
       ParentID: 0,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-user'
     },
     {
       MenuID: 18,
@@ -244,7 +258,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 4,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 19,
@@ -253,7 +268,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 4,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 20,
@@ -262,7 +278,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 4,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 21,
@@ -271,7 +288,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 4,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 22,
@@ -280,7 +298,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 4,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 23,
@@ -289,7 +308,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 4,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 5,
@@ -298,7 +318,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       RoleID: 0,
       ParentID: 0,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-laptop'
     },
     {
       MenuID: 24,
@@ -307,7 +328,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 5,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 25,
@@ -316,7 +338,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 5,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 26,
@@ -325,7 +348,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 5,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 27,
@@ -334,7 +358,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 5,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 28,
@@ -343,7 +368,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 5,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 29,
@@ -352,7 +378,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 2,
       RoleID: 0,
       ParentID: 5,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-circle-o'
     },
     {
       MenuID: 6,
@@ -361,7 +388,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       RoleID: 0,
       ParentID: 0,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-bar-chart'
     },
     {
       MenuID: 7,
@@ -370,7 +398,8 @@ export const fetchMenuRoles = ({ commit }) => {
       MenuLevel: 1,
       RoleID: 0,
       ParentID: 0,
-      RoleName: ''
+      RoleName: '',
+      MenuIcon: 'fa fa-edit'
     }
   ])
 }
@@ -462,28 +491,32 @@ export const fetchCurrentUser = ({ commit }) => {
         MenuName: '管理员管理',
         MenuURL: '',
         MenuLevel: 1,
-        ParentID: 0
+        ParentID: 0,
+        MenuIcon: 'fa fa-shield'
       },
       {
         MenuID: 8,
         MenuName: '设置角色权限',
         MenuURL: '/Manage/RoleRights',
         MenuLevel: 2,
-        ParentID: 1
+        ParentID: 1,
+        MenuIcon: 'fa fa-circle-o'
       },
       {
         MenuID: 9,
         MenuName: '设置管理员角色',
         MenuURL: '/Manage/ManagerRole',
         MenuLevel: 2,
-        ParentID: 1
+        ParentID: 1,
+        MenuIcon: 'fa fa-circle-o'
       },
       {
         MenuID: 10,
         MenuName: '管理员信息',
         MenuURL: '/Manage/ManagerInfo',
         MenuLevel: 2,
-        ParentID: 1
+        ParentID: 1,
+        MenuIcon: 'fa fa-circle-o'
       }
     ]
   })

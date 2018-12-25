@@ -1,10 +1,10 @@
 <template>
-  <div>
-    登录页面
-  </div>
+  <div>Hello,World</div>
 </template>
 
 <script>
   export default {
   }
 </script>
+<style scoped>
+</style>

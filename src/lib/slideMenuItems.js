@@ -228,7 +228,7 @@ module.exports = [
         icon: 'fa fa-circle-o',
         name: '我的相册',
         router: {
-          name: 'GeneralElements'
+          name: 'AdvancedElements'
         }
       },
       {

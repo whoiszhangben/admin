@@ -42,6 +42,15 @@
 代售管理	/Mall/Commission
 快递管理	/Mall/Express
 
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('管理员管理','',NULL,1);
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('香港代购','',NULL,1);
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('华信工作','',NULL,1);
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('会员管理','',NULL,1);
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('商城管理','',NULL,1);
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('报表查询','',NULL,1);
+insert into MenuInfo(MenuName,MenuURL,ParentID,MenuLevel) VALUES ('个人点滴','',NULL,1);
+
+
 
 
 

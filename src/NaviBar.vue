@@ -212,41 +212,17 @@
           </li>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">{{ currentUser.name }}</span>
+            <a href="javascript:void 0;" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="hidden-xs">{{ currentUser.LoginAccount }}</span>
             </a>
             <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  {{ currentUser.name }} - {{ currentUser.position }}
-                  <small>{{ currentUser.createdAt }}</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <row>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </row>
-                <!-- /.row -->
-              </li>
               <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
+              <li class="user-body">
+                <p>
+                  {{ currentUser.LoginAccount }} - {{ currentUser.RoleName }}
+                </p>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="javascript:void 0;" class="btn btn-default btn-flat" @click="doLogout">登出</a>
                 </div>
               </li>
             </ul>
@@ -263,6 +239,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import * as types from './vuex/mutation-types'
 
 export default {
   name: 'va-navibar',
@@ -273,6 +250,47 @@ export default {
       'remainTasksCount',
       'currentUser'
     ])
+  },
+  methods: {
+    doLogout () {
+      this.$store.commit(types.FETCH_CURRENTUSER, {
+        LoginID: 1,
+        LoginAccount: 'zk_admin',
+        RoleID: 1,
+        RoleName: '电商总管理员',
+        IsLogin: false,
+        MenuRights: [
+          {
+            MenuID: 1,
+            MenuName: '管理员管理',
+            MenuURL: '',
+            MenuLevel: 1,
+            ParentID: 0
+          },
+          {
+            MenuID: 8,
+            MenuName: '设置角色权限',
+            MenuURL: '/Manage/RoleRights',
+            MenuLevel: 2,
+            ParentID: 1
+          },
+          {
+            MenuID: 9,
+            MenuName: '设置管理员角色',
+            MenuURL: '/Manage/ManagerRole',
+            MenuLevel: 2,
+            ParentID: 1
+          },
+          {
+            MenuID: 10,
+            MenuName: '管理员信息',
+            MenuURL: '/Manage/ManagerInfo',
+            MenuLevel: 2,
+            ParentID: 1
+          }
+        ]
+      })
+    }
   }
 }
 

@@ -178,17 +178,13 @@ const routes = [
 ]
 
 const router = new Router({
-  scrollBehavior: () => ({ y: 0 }),
   routes,
+  history: true,
+  base: '/',
   linkActiveClass: 'active'
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.path !== '/login') {
-    console.log(to)
-    console.log(from)
-    console.log(next)
-    next()
-  }
+  next()
 })
 export default router

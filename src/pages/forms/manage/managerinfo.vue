@@ -2,7 +2,7 @@
   <div>
     <div class="clearfix" style="margin-bottom: 1em;">
       <div class="pull-right">
-        <a class="btn bg-blue" @click="add(15)">
+        <a class="btn btn-sm btn-primary" @click="add(15)">
           <i class="fa fa-plus-square"></i>
           <span>管理员开户</span>
         </a>

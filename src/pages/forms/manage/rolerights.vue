@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="clearfix" style="margin-bottom: 1em;">
-      <p>角色名称：<input type="text"/><button style="margin: 1em;">新增角色</button></p>
+      <p>角色名称：<input type="text"/><a class="btn btn-sm btn-primary" style="margin: 1em;">新增角色</a></p>
     </div>
     <div class="box">
       <div class="box-body">

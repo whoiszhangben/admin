@@ -10,6 +10,8 @@ import router from './router'
 import EventBus from './lib/eventBus.js'
 import axios from 'axios'
 import './assets/css/main.css'
+import './assets/css/iconfont/font_2na6f0no8a/iconfont.css'
+import './assets/css/iconfont/font_4dtemxzmiap/iconfont.css'
 
 Vue.prototype.$bus = EventBus
 Vue.prototype.$http = axios
